@@ -13,4 +13,10 @@ export class ApiService {
   async get() {
     return this.httpClient.get<IBeer[]>(this.BEER_URL).toPromise();
   }
+  async getQueryString(queryString: string) {
+    // 'https://api.punkapi.com/v2/beers/queryString'
+    return this.httpClient
+      .get<IBeer[]>('${this.BEER_URL}/?${queryString}')
+      .toPromise();
+  }
 }

@@ -11,4 +11,8 @@ export class BeerDataService {
   async getBeers(): Promise<IBeer[]> {
     return await this.apiService.get();
   }
+
+  async getBeersCount(count: number): Promise<IBeer[]> {
+    return await this.apiService.getQueryString('per_page=' + count);
+  }
 }

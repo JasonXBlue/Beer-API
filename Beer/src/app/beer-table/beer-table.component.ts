@@ -19,6 +19,8 @@ export class BeerTableComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   async ngOnInit() {
+    // this.dataSource = new MatTableDataSource(await this.apiService.get());
+    // this.dataSource.sort = this.sort;
     this.dataSource = new MatTableDataSource(await this.apiService.get());
     this.dataSource.sort = this.sort;
   }
