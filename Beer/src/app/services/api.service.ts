@@ -11,16 +11,11 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
   async get() {
-    return await this.httpClient.get<IBeer[]>(this.BEER_URL).toPromise();
+    return await this.httpClient
+      .get<IBeer[]>(this.BEER_URL + '?per_page=70')
+      .toPromise();
   }
   async getBeersCount(path) {
     return await this.httpClient.get<IBeer[]>(this.BEER_URL + path).toPromise();
   }
-
-  //   async getQueryString(queryString: string) {
-  //     // 'https://api.punkapi.com/v2/beers/queryString'
-  //     return this.httpClient
-  //       .get<IBeer[]>('${this.BEER_URL}/?${queryString}')
-  //       .toPromise();
-  //   }
 }

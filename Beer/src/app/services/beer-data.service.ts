@@ -8,6 +8,8 @@ import { IBeer } from '../interfaces/ibeer';
 export class BeerDataService {
   constructor(private apiService: ApiService) {}
 
+  searchName: string;
+
   async getBeers(): Promise<IBeer[]> {
     return await this.apiService.get();
   }

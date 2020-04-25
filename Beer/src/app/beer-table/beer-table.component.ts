@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 import { IBeer } from '../interfaces/ibeer';
 import { BeerDataService } from '../services/beer-data.service';
@@ -14,9 +15,11 @@ export class BeerTableComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'tagline', 'abv', 'image_url'];
 
   dataSource = new MatTableDataSource<IBeer>();
-  count = 26;
+  count = 71;
+  @Input() searchName = '';
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   constructor(private beerDataService: BeerDataService) {}
 
@@ -24,6 +27,7 @@ export class BeerTableComponent implements OnInit {
     const data = await this.beerDataService.getBeers();
     this.dataSource = new MatTableDataSource(data);
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
   applyFilter(filter: string): void {
     this.dataSource.filter = filter.trim().toLowerCase();

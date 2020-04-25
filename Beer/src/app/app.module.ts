@@ -9,6 +9,9 @@ import { MatTableModule } from '@angular/material/table';
 import { BeerTableComponent } from './beer-table/beer-table.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, BeerComponent, BeerTableComponent],
@@ -19,6 +22,9 @@ import { MatInputModule } from '@angular/material/input';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
