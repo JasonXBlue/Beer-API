@@ -16,7 +16,7 @@ export class BeerTableComponent implements OnInit {
 
   dataSource = new MatTableDataSource<IBeer>();
   count = 71;
-  @Input() searchName = '';
+  searchName = '';
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -36,5 +36,8 @@ export class BeerTableComponent implements OnInit {
     this.dataSource = new MatTableDataSource(
       await this.beerDataService.getCount(this.count++)
     );
+  }
+  search() {
+    console.log(this.searchName);
   }
 }
