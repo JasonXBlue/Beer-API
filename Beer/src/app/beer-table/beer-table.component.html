@@ -4,6 +4,9 @@
 <button mat-stroked-button color="accent" (click)="newBeer()">
   New Beer
 </button>
+<!-- <button mat-stroked-button color="accent" (click)="searchBeers()">
+  Search Beers
+</button> -->
 
 <div>
   <table
@@ -62,9 +65,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header>
         <font color="#C2185B">abv</font>
       </th>
-      <td mat-cell *matCellDef="let element">
-        {{ element.abv }}
-      </td>
+      <td mat-cell *matCellDef="let element">{{ element.abv }} %</td>
     </ng-container>
     <!-- Image Column -->
     <ng-container matColumnDef="image_url">

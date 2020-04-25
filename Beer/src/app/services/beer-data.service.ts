@@ -17,4 +17,8 @@ export class BeerDataService {
   async getCount(count: number): Promise<IBeer[]> {
     return await this.apiService.getBeersCount('?per_page=' + count);
   }
+
+  // async getSearch(): Promise<IBeer[]> {
+  //   return await this.apiService.Search('?beer_name=punk');
+  // }
 }
