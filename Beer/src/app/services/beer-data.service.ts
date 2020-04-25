@@ -12,7 +12,7 @@ export class BeerDataService {
     return await this.apiService.get();
   }
 
-  async getBeersCount(count: number): Promise<IBeer[]> {
-    return await this.apiService.getQueryString('per_page=' + count);
+  async getCount(count: number): Promise<IBeer[]> {
+    return await this.apiService.getBeersCount('?per_page=' + count);
   }
 }

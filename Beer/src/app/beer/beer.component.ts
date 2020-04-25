@@ -13,6 +13,6 @@ export class BeerComponent implements OnInit {
   constructor(private beerDataService: BeerDataService) {}
 
   async ngOnInit() {
-    this.message = JSON.stringify(await this.beerDataService.getBeersCount(10));
+    // this.message = JSON.stringify(await this.beerDataService.getCount(10));
   }
 }
