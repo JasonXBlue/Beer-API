@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [AppComponent, BeerComponent, BeerTableComponent],
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatButtonModule,
     FormsModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
