@@ -46,5 +46,6 @@ export class BeerTableComponent implements OnInit {
       await this.beerDataService.getCount(this.count++)
     );
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 }
