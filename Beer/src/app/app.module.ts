@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { BeerComponent } from './beer/beer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
@@ -15,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
-  declarations: [AppComponent, BeerComponent, BeerTableComponent],
+  declarations: [AppComponent, BeerTableComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

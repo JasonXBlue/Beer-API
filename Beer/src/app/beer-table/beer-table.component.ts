@@ -49,9 +49,4 @@ export class BeerTableComponent implements OnInit {
     );
     this.dataSource.sort = this.sort;
   }
-  // async searchBeers() {
-  //   this.dataSource = new MatTableDataSource(
-  //     await this.beerDataService.getSearch()
-  //   );
-  // }
 }
