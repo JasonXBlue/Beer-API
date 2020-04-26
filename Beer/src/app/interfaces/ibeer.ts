@@ -5,4 +5,5 @@ export interface IBeer {
   tagline: string;
   abv: number;
   image_url: string;
+  food_pairing: string[];
 }

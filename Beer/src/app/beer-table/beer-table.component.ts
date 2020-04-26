@@ -12,7 +12,14 @@ import { BeerDataService } from '../services/beer-data.service';
   styleUrls: ['./beer-table.component.css'],
 })
 export class BeerTableComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'tagline', 'abv', 'image_url'];
+  displayedColumns: string[] = [
+    'id',
+    'image_url',
+    'name',
+    'abv',
+    'tagline',
+    'food_pairing',
+  ];
 
   dataSource = new MatTableDataSource<IBeer>();
   count = 71;
@@ -29,13 +36,18 @@ export class BeerTableComponent implements OnInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
-  applyFilter(filter: string): void {
-    this.dataSource.filter = filter.trim().toLowerCase();
+  // applyFilter(filter: string): void {
+  //   this.dataSource.filter = filter.trim().toLowerCase();
+  // }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   async newBeer() {
     this.dataSource = new MatTableDataSource(
       await this.beerDataService.getCount(this.count++)
     );
+    this.dataSource.sort = this.sort;
   }
   // async searchBeers() {
   //   this.dataSource = new MatTableDataSource(
